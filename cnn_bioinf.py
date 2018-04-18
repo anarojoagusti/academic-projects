@@ -14,10 +14,6 @@ Created on Sat Mar 31 20:00:30 2018
 # Installing PIL
 
 # Part 1 - Building the CNN
-#import tensorflow as tf
-#hello = tf.constant('Hello, TensorFlow!')
-#sess = tf.Session()
-#print(sess.run(hello))
 
 # Importing the Keras libraries and packages
 from keras.preprocessing import image
@@ -60,8 +56,7 @@ Optimizer = keras.optimizers.Adam(lr=0.002,
                   beta_1=0.9,
                   beta_2=0.999,
                   epsilon=1e-08,
-                  decay=0.004)
-#Compilamos la red neuronal
+                  decay=0.
 classifier.compile(loss='categorical_crossentropy',
               optimizer=Optimizer,
               metrics=['categorical_accuracy'])
@@ -77,12 +72,12 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-train_set = train_datagen.flow_from_directory('dataset4/train_set',
+train_set = train_datagen.flow_from_directory('pathwork/train_set',
                                                  target_size = (64,64),
                                                  batch_size = 32
                                                  )
 
-test_set = test_datagen.flow_from_directory('dataset4/test_set',
+test_set = test_datagen.flow_from_directory('pathwork/val_set',
                                             target_size = (64,64),
                                             batch_size = 32
                                             )
@@ -94,8 +89,8 @@ classifier.fit_generator(train_set,
                          nb_val_samples = 200)
                          #use_multiprocessing=True
 
-## PARTE 3: HACEMOS PREDICCIONES SOBRE IMAGENES NUEVAS
-file=open('C:\\Users\\anaro\\OneDrive\\Escritorio\\bioinformatica\\Convolutional_Neural_Networks\\dataset4\\predictsim\\Labels.csv','r')
+## Part 3 - Predict labels for new test sets 
+file=open(pathwork + 'predict_set\\Labels.csv','r')
 fileLabels=csv.reader(file)
 labels=list()
 for line in fileLabels:
