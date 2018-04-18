@@ -13,7 +13,7 @@ pillow
 2. Place the data folders in the pathwork/DATA folder.
 3. Run the training: Part 1 - Part 2.
 '''
-$ python cnn_bioinf_train.py
+$ python cnn_bioinf.py
 
 ## Writing prediction labels from predict set
 Predicted labels and the values of accucary, recall (sensibity) and predict (specificity) of the predict dataset achieved by the classifier will be returned.
