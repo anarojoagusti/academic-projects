@@ -2,7 +2,7 @@
 # academic-projects
 bioinformat
 ## Background
-The code was written to be trained using the COMAV private data set of flowers, fruits, trichomas and leafs, but it can be easily modified to be used in other 2D applications.
+The code was written to be trained using the COMAV private data set of 1000 jpg imagens composed of 4 different elements to automatically classify (flowers, fruits, trichomas and leafs). But it can be easily modified to be used in other 2D applications.
 
 ## Training
 '''1. Install dependencies:
